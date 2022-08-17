@@ -42,12 +42,16 @@ const ForumTitle = styled.div`
 position: relative;
 bottom: 400px;
 left: 15px;
+font-family: Verdana-Bold;
 `
 
 const HotTitle = styled.div`
 position: relative;
 bottom: 70px;
 left: 350px;
+font-family: Verdana-Bold;
+
+
 `
 
 const RandomName = styled.div`
