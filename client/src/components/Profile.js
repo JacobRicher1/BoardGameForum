@@ -2,6 +2,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import styled from 'styled-components';
 import UsersCollection from './UsersCollection';
 import axios from "axios"
+import ArticleThumbnail from './Articles/ArticleThumbnail';
 
 const Profile = () => {
     const { user, isAuthenticated } = useAuth0();
@@ -11,18 +12,22 @@ const Profile = () => {
           <Article>
             {user?.picture && <ProfilePic src={user.picture}></ProfilePic>}
             <UsersName>{user.name}</UsersName>
+            <Title>WishList</Title>
             <Wrapper>
-            <div>WishList</div>
-            <WishList>
-
-            </WishList>
+            
+              <ArticleThumbnail />
+              <ArticleThumbnail />
+              <ArticleThumbnail />
+            
             </Wrapper>
+            <Title>Collection</Title>
             <Wrapper>
-            <div>Collection</div>
-            <>
-            </>
+            
+              <ArticleThumbnail />
+              <ArticleThumbnail />
+              <ArticleThumbnail />
+          
             </Wrapper>
-            {/* <UsersCollection /> */}
             
 
           </Article>
@@ -31,6 +36,11 @@ const Profile = () => {
     )
 }
 
+
+const Title = styled.div`
+font-family: Verdana-Bold;
+
+`
 const Article = styled.article`
 display: flex;
 flex-direction:column;
@@ -38,18 +48,18 @@ flex:1;
 `
 
 const Wrapper = styled.div`
-border-style: solid;
-border-width: 1px;
 width: fit-content;
-align-self: flex-end;
+position: relative;
+left: 150px;
 
 `
 
-const WishList = styled.li`
+const WishList = styled.div`
+
 `
 
 const UsersName = styled.div`
-align-self: flex-end;
+
 font-family: Verdana-Bold;
 
 
@@ -58,7 +68,6 @@ font-family: Verdana-Bold;
 const ProfilePic = styled.img`
 width: 120px;
 border-radius: 5px;
-align-self: flex-end;
 border-style: solid;
 border-width: 5px;
 `
