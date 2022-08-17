@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from "styled-components" 
 import { NavLink as Link } from "react-router-dom"
+import SearchBar from './SearchBar'
 
 <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet'></link>
 const Header = () => {
@@ -10,16 +11,17 @@ const Header = () => {
                 <Title>BGDB</Title>
             </NavLink>
             <NavMenu>
-                <NavLink to="/about" activeStyle>
-                    <Title>About</Title>
-                </NavLink>
                 <NavLink to="/profile" activeStyle>
                     <Title>Profile</Title>
                 </NavLink>
                 <NavLink to="/ranking" activeStyle>
                 <Title>Ranking</Title>
                 </NavLink>
-                <NavBtnLink to="/sign">Sign In</NavBtnLink>
+                <NavLink to="/login" activeStyle>
+                <Title>Sign In</Title>
+                </NavLink>
+
+                <SearchBar />
             </NavMenu>
         </Nav>
     )
@@ -27,13 +29,11 @@ const Header = () => {
 
 
 const Title = styled.div`
-    font-family: 'Verdana-Bold
-
-';
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 `
 
 const Nav = styled.nav`
-    background: #A350A3;
+    background: #FAF9F6;
     height: 65px;
     display: flex;
     justify-content: space-between;
@@ -41,7 +41,7 @@ const Nav = styled.nav`
 `
 
 const NavLink = styled(Link)`
-    color: #fff;
+    color: #0C0A00;
     display: flex;
     align-items: center;
     text-decoration: none;
